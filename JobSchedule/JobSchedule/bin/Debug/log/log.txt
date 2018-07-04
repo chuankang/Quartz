@@ -1,0 +1,3 @@
+﻿2018-07-04 14:44:24,083 [基金数据作业监控系统_Worker-2] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
+2018-07-04 14:44:24,083 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob2.TestJob2 [(null)] - 测试Job2开启--------------
+2018-07-04 14:44:25,000 [基金数据作业监控系统_Worker-3] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
