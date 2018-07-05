@@ -1,4 +1,4 @@
-﻿using Commons.Utils;
+﻿using Commons.ConfigUtils;
 using Dapper;
 using System.Collections.Generic;
 using System.Data;

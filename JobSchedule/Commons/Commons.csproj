@@ -46,7 +46,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelpers\DapperSqlHelper.cs" />
-    <Compile Include="Utils\ConfigUtil.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ConfigUtils\ConfigUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
