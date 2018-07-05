@@ -1,8 +1,7 @@
 ﻿using System.Configuration;
-using System.IO;
 using System.Net;
 using System.Net.Mail;
-using System.Net.Mime;
+using System.Threading.Tasks;
 
 namespace Commons
 {
@@ -14,39 +13,39 @@ namespace Commons
 		/// <param name="subject">主题</param>
 		/// <param name="body">邮件内容</param>
 		/// <param name="path">附件地址</param>
-		public static void SendEmail(string subject, string body, string path = null)
+		public static void SendEmail(string subject, string body)
 		{
-			//发邮件
-			var message = new MailMessage
+			Task.Factory.StartNew(() =>
 			{
-				From = new MailAddress("SkyE_WarningMai@kaytune.com")
-			};
-
-			message.To.Add("1037134@qq.com");
-			message.Subject = subject;
-			message.Body = body;
-
-			#region 附件
-			if (!string.IsNullOrEmpty(path) && File.Exists(path))
-			{
-				var myAttachment = new Attachment(path, MediaTypeNames.Application.Octet)
+				//发件人
+				string mailFrom = ConfigurationManager.AppSettings["EmailSender"];
+				//收件人(多个收件人时用分号';'或者','隔开)
+				string mailTo = ConfigurationManager.AppSettings["DeveloperEmails"];
+				//密码
+				string senderCredentials = ConfigurationManager.AppSettings["Credentials"];
+				var mailboxs = mailTo.Split(';', ',');
+				var mailMessage = new MailMessage();
+				foreach (string mailbox in mailboxs)
 				{
-					NameEncoding = System.Text.Encoding.UTF8
+					mailMessage.To.Add(mailbox);
+				}
+				mailMessage.From = new MailAddress(mailFrom);
+				//mailMessage.CC.Add("cc@qq.com");//抄送人地址
+				mailMessage.Subject = subject;//邮件标题 
+				mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;//标题格式为UTF8
+				mailMessage.Body = body;//邮件内容 
+				mailMessage.BodyEncoding = System.Text.Encoding.UTF8;//内容格式为UTF8
+
+				var client = new SmtpClient
+				{
+					//Port= 1995,//端口号未知
+					Host = "smtpcom.263xmail.com",
+					//EnableSsl = true,//启用SSL加密
+					Credentials = new NetworkCredential(mailFrom, senderCredentials)//账号，密码
 				};
-				message.Attachments.Add(myAttachment);
-			}
 
-			#endregion
-
-			message.IsBodyHtml = true;
-			var smtp = new SmtpClient("smtp.qiye.163.com")
-			{
-				UseDefaultCredentials = true,
-				Credentials = new NetworkCredential(ConfigurationManager.AppSettings["EmailName"],
-					ConfigurationManager.AppSettings["EmailPwd"])
-			};
-
-			smtp.Send(message);
+				client.Send(mailMessage);//发送邮件
+			});
 		}
 	}
 }
