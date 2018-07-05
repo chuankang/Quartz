@@ -1,8 +1,11 @@
-﻿using log4net;
+﻿using Commons.SqlHelpers;
+using log4net;
+using Models;
 using Quartz;
 using System;
+using Newtonsoft.Json;
 
-namespace JobSchedule.Jobs.TestJob
+namespace JobSchedule.Jobs
 {
 	public class TestJob : JobService<TestJob>, IJob
 	{
@@ -14,8 +17,12 @@ namespace JobSchedule.Jobs.TestJob
 
 		public void Execute(IJobExecutionContext context)
 		{
+			const string sql = "SELECT TOP 1 Code,Name FROM dbo.function_apps";
+			var appList = DapperSqlHelper.GetList<TestModel>(sql);
+			string json = JsonConvert.SerializeObject(appList);
 			_logger.Info("测试Job开启--------------");
-			Console.WriteLine("hello");
+			_logger.Info($"输出{json}");
+			Console.WriteLine($"{json}");
 		}
 	}
 }

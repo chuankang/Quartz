@@ -1,0 +1,9 @@
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\bin\Debug\Commons.dll
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\bin\Debug\Commons.pdb
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\bin\Debug\Dapper.dll
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\bin\Debug\Dapper.xml
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.csprojAssemblyReference.cache
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.csproj.CoreCompileInputs.cache
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.csproj.CopyComplete
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.dll
+D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.pdb

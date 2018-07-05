@@ -25,7 +25,7 @@ namespace JobSchedule
 					["quartz.threadPool.threadPriority"] = "Normal",
 					// 远程输出配置
 					["quartz.scheduler.exporter.type"] = "Quartz.Simpl.RemotingSchedulerExporter, Quartz",
-					["quartz.scheduler.exporter.port"] = "8008",
+					["quartz.scheduler.exporter.port"] = "8009",
 					["quartz.scheduler.exporter.bindName"] = "QuartzScheduler",
 					["quartz.scheduler.exporter.channelType"] = "tcp"
 				};

@@ -2,7 +2,7 @@
 using log4net;
 using System;
 
-namespace JobSchedule.Jobs.TestJob2
+namespace JobSchedule.Jobs
 {
 	public class TestJob2 : JobService<TestJob2>, IJob
 	{

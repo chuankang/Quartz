@@ -1,3 +1,10 @@
 ﻿2018-07-04 14:44:24,083 [基金数据作业监控系统_Worker-2] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
 2018-07-04 14:44:24,083 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob2.TestJob2 [(null)] - 测试Job2开启--------------
 2018-07-04 14:44:25,000 [基金数据作业监控系统_Worker-3] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:32:40,635 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:33:00,320 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:33:05,001 [基金数据作业监控系统_Worker-2] INFO  JobSchedule.Jobs.TestJob.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:36:15,335 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:36:15,352 [基金数据作业监控系统_Worker-1] INFO  JobSchedule.Jobs.TestJob [(null)] - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+2018-07-05 09:36:20,002 [基金数据作业监控系统_Worker-2] INFO  JobSchedule.Jobs.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 09:36:20,044 [基金数据作业监控系统_Worker-2] INFO  JobSchedule.Jobs.TestJob [(null)] - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
