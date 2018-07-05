@@ -1,9 +1,10 @@
-﻿using Commons.SqlHelpers;
+﻿using Commons;
+using Commons.SqlHelpers;
 using log4net;
 using Models;
+using Newtonsoft.Json;
 using Quartz;
 using System;
-using Newtonsoft.Json;
 
 namespace JobSchedule.Jobs
 {
@@ -21,6 +22,8 @@ namespace JobSchedule.Jobs
 			var appList = DapperSqlHelper.GetList<TestModel>(sql);
 			string json = JsonConvert.SerializeObject(appList);
 			_logger.Info("测试Job开启--------------");
+
+			Utils.SendEmail("关于国庆节的通知","成功");
 			_logger.Info($"输出{json}");
 			Console.WriteLine($"{json}");
 		}

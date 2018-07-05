@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.SqlClient;
 
-namespace Commons.Utils
+namespace Commons.ConfigUtils
 {
 	public class ConfigUtil
 	{
