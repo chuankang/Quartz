@@ -1,0 +1,11 @@
+﻿2018-07-05 10:58:55,008 [基金数据作业监控系统_Worker-6] INFO  JobSchedule.Jobs.TestJob [(null)] - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+2018-07-05 10:59:00,002 [基金数据作业监控系统_Worker-7] INFO  JobSchedule.Jobs.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 10:59:00,008 [基金数据作业监控系统_Worker-7] INFO  JobSchedule.Jobs.TestJob [(null)] - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+2018-07-05 10:59:05,002 [基金数据作业监控系统_Worker-8] INFO  JobSchedule.Jobs.TestJob [(null)] - 测试Job开启--------------
+2018-07-05 10:59:05,008 [基金数据作业监控系统_Worker-8] INFO  JobSchedule.Jobs.TestJob [(null)] - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+INFO  2018-07-05 11:03:30,252 [ker-1] JobSchedule.Jobs.TestJob                 - 测试Job开启--------------
+INFO  2018-07-05 11:03:30,266 [ker-1] JobSchedule.Jobs.TestJob                 - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+INFO  2018-07-05 11:03:35,001 [ker-2] JobSchedule.Jobs.TestJob                 - 测试Job开启--------------
+INFO  2018-07-05 11:03:35,005 [ker-2] JobSchedule.Jobs.TestJob                 - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]
+INFO  2018-07-05 11:03:40,002 [ker-3] JobSchedule.Jobs.TestJob                 - 测试Job开启--------------
+INFO  2018-07-05 11:03:40,032 [ker-3] JobSchedule.Jobs.TestJob                 - 输出[{"Code":"Fund.MVC","Name":"Fund New Website"}]

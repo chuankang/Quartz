@@ -21,7 +21,7 @@ namespace JobSchedule
 					["quartz.scheduler.instanceName"] = "基金数据作业监控系统",
 					// 设置线程池
 					["quartz.threadPool.type"] = "Quartz.Simpl.SimpleThreadPool, Quartz",
-					["quartz.threadPool.threadCount"] = "5",
+					["quartz.threadPool.threadCount"] = "10",
 					["quartz.threadPool.threadPriority"] = "Normal",
 					// 远程输出配置
 					["quartz.scheduler.exporter.type"] = "Quartz.Simpl.RemotingSchedulerExporter, Quartz",
