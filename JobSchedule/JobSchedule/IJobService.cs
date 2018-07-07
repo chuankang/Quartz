@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JobSchedule
+﻿namespace JobSchedule
 {
-	public interface IJobService
+    public interface IJobService
 	{
-		bool Start();
-		bool Stop();
+		void Start();
+		void Stop();
 	}
 }

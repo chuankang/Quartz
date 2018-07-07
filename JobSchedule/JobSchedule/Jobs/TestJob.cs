@@ -1,14 +1,14 @@
 ﻿using Commons;
 using Commons.SqlHelpers;
+using JobSchedule.Models;
 using log4net;
-using Models;
 using Newtonsoft.Json;
 using Quartz;
 using System;
 
 namespace JobSchedule.Jobs
 {
-	public class TestJob : JobService<TestJob>, IJob
+    public class TestJob : JobService<TestJob>, IJob
 	{
 		private readonly ILog _logger = LogManager.GetLogger(typeof(TestJob));
 		protected override string JobName => "计算净值走势Job";
@@ -19,7 +19,7 @@ namespace JobSchedule.Jobs
 		public void Execute(IJobExecutionContext context)
 		{
 			const string sql = "SELECT TOP 1 Code,Name FROM dbo.function_apps";
-			var appList = DapperSqlHelper.GetList<TestModel>(sql);
+			var appList = DapperSqlHelper.GetList<Test>(sql);
 			string json = JsonConvert.SerializeObject(appList);
 			_logger.Info("测试Job开启--------------");
 
