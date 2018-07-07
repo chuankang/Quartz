@@ -1,0 +1,1330 @@
+[20180707 22:44:21][][Info] Build custom component...
+[20180707 22:44:23][JD SKU SAMPLE][Info] Build internal component...
+[20180707 22:44:25][JD SKU SAMPLE][Info] Add start urls to scheduler, count 1.
+[20180707 22:44:25][JD SKU SAMPLE][Trace] Left 1 Success 0 Error 0 Total 1 Dowload 0 Extract 0 Pipeline 0
+[20180707 22:44:28][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:28][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:28][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:28][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=2&JL=6_0_0&ms=5#J_main success.
+[20180707 22:44:28][JD SKU SAMPLE][Trace] Left 6 Success 1 Error 0 Total 7 Dowload 634 Extract 411 Pipeline 363
+[20180707 22:44:29][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=158&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:29][JD SKU SAMPLE][Trace] Left 10 Success 2 Error 0 Total 12 Dowload 402 Extract 340 Pipeline 229
+[20180707 22:44:29][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:29][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=160&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:29][JD SKU SAMPLE][Trace] Left 9 Success 3 Error 0 Total 12 Dowload 283 Extract 289 Pipeline 144
+[20180707 22:44:30][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=159&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:30][JD SKU SAMPLE][Trace] Left 8 Success 4 Error 0 Total 12 Dowload 222 Extract 241 Pipeline 102
+[20180707 22:44:30][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:30][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=156&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:31][JD SKU SAMPLE][Trace] Left 9 Success 5 Error 0 Total 14 Dowload 191 Extract 268 Pipeline 68
+[20180707 22:44:31][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:31][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:31][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:31][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=154&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:31][JD SKU SAMPLE][Trace] Left 10 Success 6 Error 0 Total 16 Dowload 182 Extract 275 Pipeline 49
+[20180707 22:44:32][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=152&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:32][JD SKU SAMPLE][Trace] Left 11 Success 7 Error 0 Total 18 Dowload 168 Extract 282 Pipeline 103
+[20180707 22:44:32][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:32][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=150&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:33][JD SKU SAMPLE][Trace] Left 12 Success 8 Error 0 Total 20 Dowload 162 Extract 254 Pipeline 151
+[20180707 22:44:33][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:33][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:33][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:33][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=148&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:33][JD SKU SAMPLE][Trace] Left 13 Success 9 Error 0 Total 22 Dowload 175 Extract 255 Pipeline 130
+[20180707 22:44:34][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:34][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:34][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:34][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=146&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:34][JD SKU SAMPLE][Trace] Left 14 Success 10 Error 0 Total 24 Dowload 197 Extract 316 Pipeline 117
+[20180707 22:44:34][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:35][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:35][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:35][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=144&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:35][JD SKU SAMPLE][Trace] Left 15 Success 11 Error 0 Total 26 Dowload 196 Extract 268 Pipeline 210
+[20180707 22:44:36][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:36][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:37][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:37][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=142&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:37][JD SKU SAMPLE][Trace] Left 16 Success 12 Error 0 Total 28 Dowload 181 Extract 256 Pipeline 818
+[20180707 22:44:37][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:37][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:37][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:37][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=140&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:37][JD SKU SAMPLE][Trace] Left 17 Success 13 Error 0 Total 30 Dowload 195 Extract 220 Pipeline 481
+[20180707 22:44:38][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:38][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:38][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:38][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=138&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:38][JD SKU SAMPLE][Trace] Left 18 Success 14 Error 0 Total 32 Dowload 164 Extract 202 Pipeline 451
+[20180707 22:44:39][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=136&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:39][JD SKU SAMPLE][Trace] Left 19 Success 15 Error 0 Total 34 Dowload 161 Extract 222 Pipeline 242
+[20180707 22:44:39][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:39][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=134&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:39][JD SKU SAMPLE][Trace] Left 20 Success 16 Error 0 Total 36 Dowload 187 Extract 234 Pipeline 162
+[20180707 22:44:40][System][Error] Execute pipeline failed [1]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:40][System][Error] Execute pipeline failed [2]: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 31
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:40][JD SKU SAMPLE][Error] Execute pipeline failed: System.Data.SqlClient.SqlException (0x80131904): 将截断字符串或二进制数据。
+已将数据库上下文更改为 'OWNDB'。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.<>c__DisplayClass3_0.<MyExecute>b__0()
+   在 DotnetSpider.Core.Redial.NetworkCenter.Execute[T](String name, Func`1 func)
+   在 DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(IDbConnection conn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   在 DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(String entityName, IEnumerable`1 datas, ISpider spider)
+   在 DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(IEnumerable`1 resultItems, ISpider spider)
+   在 DotnetSpider.Core.Spider.<>c__DisplayClass162_1.<HandleRequest>b__0()
+   在 Polly.Policy.<>c__DisplayClass109_0.<Execute>b__0(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 Polly.RetrySyntax.<>c__DisplayClass5_1.<Retry>b__1(Context ctx, CancellationToken ct) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 98
+   在 Polly.Retry.RetryEngine.Implementation[TResult](Func`3 action, Context context, CancellationToken cancellationToken, IEnumerable`1 shouldRetryExceptionPredicates, IEnumerable`1 shouldRetryResultPredicates, Func`1 policyStateFactory) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetryEngine.cs:行号 59
+   在 Polly.RetrySyntax.<>c__DisplayClass5_0.<Retry>b__0(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Retry\RetrySyntax.cs:行号 97
+   在 Polly.Policy.Execute(Action`2 action, Context context, CancellationToken cancellationToken) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 151
+   在 Polly.Policy.Execute(Action action) 位置 C:\projects\polly\src\Polly.Shared\Policy.cs:行号 41
+   在 DotnetSpider.Core.Spider.HandleRequest(Stopwatch stopwatch, Request request, IDownloader downloader)
+ClientConnectionId:f9dd3676-4a46-42a0-8922-413bd1cbae6c
+Error Number:8152,State:13,Class:16
+[20180707 22:44:40][JD SKU SAMPLE][Info] Crawl: http://list.jd.com/list.html?cat=9987,653,655&page=132&sort=sort_rank_asc&trans=1&JL=6_0_0 success.
+[20180707 22:44:40][JD SKU SAMPLE][Trace] Left 21 Success 17 Error 0 Total 38 Dowload 169 Extract 239 Pipeline 141

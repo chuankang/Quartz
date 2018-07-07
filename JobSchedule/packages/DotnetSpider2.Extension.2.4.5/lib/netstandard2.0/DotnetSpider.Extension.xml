@@ -1,0 +1,3193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotnetSpider.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:DotnetSpider.Extension.CommonSpider">
+            <summary>
+            通用爬虫
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.CommonSpider.ValidateStatusKey">
+            <summary>
+            验证结果保存到Redis中的Key
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.MyInit(System.String[])">
+            <summary>
+            自定义的初始化
+            </summary>
+            <param name="arguments">运行参数</param>
+        </member>
+        <member name="F:DotnetSpider.Extension.CommonSpider.DataVerificationAndReport">
+            <summary>
+            爬虫结束后, 执行的数据验证和报告
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.#ctor(DotnetSpider.Core.Site)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="site">站点信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.#ctor(System.String,DotnetSpider.Core.Site)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="name">名称</param>
+            <param name="site">站点信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="name">名称</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.RunApp(System.String[])">
+            <summary>
+            运行爬虫
+            </summary>
+            <param name="arguments">运行参数</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.InitScheduler(System.String[])">
+            <summary>
+            初始化队列
+            </summary>
+            <param name="arguments">运行参数</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.IfRequireBuildStartRequests(System.String[])">
+            <summary>
+            分布式任务时使用, 只需要调用一次
+            </summary>
+            <param name="arguments">运行参数</param>
+            <returns>是否需要运行起始链接构造器</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.BuildStartRequestsFinished">
+            <summary>
+            初始化起始链结束后的解锁, 分布式任务时解锁成功则其它爬虫会结束等待状态, 一起进入运行状态
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.RegisterControl(DotnetSpider.Core.ISpider)">
+            <summary>
+            订阅 Redis的消息队列, 实现消息队列对爬虫的控制
+            </summary>
+            <param name="spider">爬虫</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.RemoveVerifidationLock">
+            <summary>
+            删除验证的锁, 让其它爬虫节点再次验证
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.CommonSpider.ProcessVerifidation">
+            <summary>
+            执行数据验证
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.DefaultEntitySpider">
+            <summary>
+            用于测试
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.DownloadCache">
+            <summary>
+            Save download content to database.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.DownloadCache.#ctor(DotnetSpider.Extension.Pipeline.BaseEntityPipeline)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="pipeline">数据管道</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.DownloadCache.Handle(DotnetSpider.Core.Page@,DotnetSpider.Core.Downloader.IDownloader,DotnetSpider.Core.ISpider)">
+            <summary>
+            把页面数据存到数据管道中
+            </summary>
+            <param name="page">页面数据</param>
+            <param name="downloader">下载器</param>
+            <param name="spider">爬虫</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.DownloadCacheData">
+            <summary>
+            下载内容缓存对象
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.DownloadCacheData.Identity">
+            <summary>
+            所属爬虫的唯一标识
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.DownloadCacheData.TaskId">
+            <summary>
+            所属爬虫的任务编号
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.DownloadCacheData.Name">
+            <summary>
+            所属爬虫的名称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.DownloadCacheData.Url">
+            <summary>
+            采集的链接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.DownloadCacheData.Content">
+            <summary>
+            下载的内容
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.FileDownloader">
+            <summary>
+            Use to do test, so you don't need to download again. 
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.FileDownloader.DowloadContent(DotnetSpider.Core.Request,DotnetSpider.Core.ISpider)">
+            <summary>
+            从文件中读取内容
+            </summary>
+            <param name="request">请求信息</param>
+            <param name="spider">爬虫</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.IWebDriverHandler">
+            <summary>
+            WebDriver的操作, 如滚动、点击
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.IWebDriverHandler.Handle(OpenQA.Selenium.Remote.RemoteWebDriver)">
+            <summary>
+            实现操作 WebDriver
+            </summary>
+            <param name="driver">WebDriver</param>
+            <returns>是否操作成功</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.WebDriverCookieInjector">
+            <summary>
+            WebDriver 的Cookie注入器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.Url">
+            <summary>
+            登陆的链接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.AfterLoginUrl">
+            <summary>
+            登陆成功后需要再次导航到的链接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.UserSelector">
+            <summary>
+            用户名在网页中的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.User">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.PasswordSelector">
+            <summary>
+            密码在网页中的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.SubmitSelector">
+            <summary>
+            登陆按钮的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.Browser">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.BeforeInput(OpenQA.Selenium.Remote.RemoteWebDriver)">
+            <summary>
+            在输入用户信息前执行的一些准备操作
+            </summary>
+            <param name="webDriver">WebDriver</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.AfterLogin(OpenQA.Selenium.Remote.RemoteWebDriver)">
+            <summary>
+            完成登陆后执行的一些准备操作
+            </summary>
+            <param name="webDriver"></param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.FindElement(OpenQA.Selenium.Remote.RemoteWebDriver,DotnetSpider.Extension.Model.SelectorAttribute)">
+            <summary>
+            查找元素
+            </summary>
+            <param name="webDriver">WebDriver</param>
+            <param name="element">页面元素选择器</param>
+            <returns>页面元素</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.GetCookies(DotnetSpider.Core.ISpider)">
+            <summary>
+            取得 Cookie
+            </summary>
+            <param name="spider">爬虫</param>
+            <returns>Cookie</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverCookieInjector.CreateWebDriver">
+            <summary>
+            创建WebDriver对象
+            </summary>
+            <returns>WebDriver对象</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.WebDriverDownloader">
+            <summary>
+            使用 WebDriver 作为下载器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverDownloader.WebDriverHandlers">
+            <summary>
+            每次navigate完成后, WebDriver 需要执行的操作
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverDownloader.#ctor(DotnetSpider.Core.Infrastructure.Browser,System.String[],System.Int32,DotnetSpider.Extension.Infrastructure.Option)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="browser">浏览器</param>
+            <param name="domains">被采集链接的Domain, Cookie</param>
+            <param name="webDriverWaitTime">请求链接完成后需要等待的时间</param>
+            <param name="option">选项</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverDownloader.#ctor(DotnetSpider.Core.Infrastructure.Browser,DotnetSpider.Extension.Infrastructure.Option)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="browser">浏览器</param>
+            <param name="option">选项</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverDownloader.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverDownloader.DowloadContent(DotnetSpider.Core.Request,DotnetSpider.Core.ISpider)">
+            <summary>
+            下载工作的具体实现
+            </summary>
+            <param name="request">请求信息</param>
+            <param name="spider">爬虫</param>
+            <returns>页面数据</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverDownloader.AddCookieToDownloadClient(System.Net.Cookie)">
+            <summary>
+            设置 Cookie
+            </summary>
+            <param name="cookie">Cookie</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.Scroll">
+            <summary>
+            滚动操作的实现
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Downloader.Scroll.Logger">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.Scroll.ScrollTimes">
+            <summary>
+            滚动次数
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.Scroll.Handle(OpenQA.Selenium.Remote.RemoteWebDriver)">
+            <summary>
+            滚动操作的具体实现
+            </summary>
+            <param name="webDriver">WebDriver</param>
+            <returns>是否操作成功</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.WebDriverLoginHandler">
+            <summary>
+            通过WebDriver的登录操作的抽象
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.WebDriverLoginHandler.Driver">
+            <summary>
+            WebDriver
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverLoginHandler.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverLoginHandler.GetCookies(DotnetSpider.Core.ISpider)">
+            <summary>
+            取得所有Cookie
+            </summary>
+            <param name="spider">爬虫</param>
+            <returns>Cookie</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverLoginHandler.Inject(DotnetSpider.Core.Downloader.IDownloader,DotnetSpider.Core.ISpider,System.Boolean)">
+            <summary>
+            执行注入Cookie的操作
+            </summary>
+            <param name="downloader">下载器</param>
+            <param name="spider">需要注入Cookie的爬虫</param>
+            <param name="pauseBeforeInject">注入Cookie前是否先暂停爬虫</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.WebDriverLoginHandler.Login">
+            <summary>
+            登录操作的实现
+            </summary>
+            <returns>是否登录成功</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.CommonLoginHandler">
+            <summary>
+            通用的登录操作
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.Url">
+            <summary>
+            登陆的链接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.UserSelector">
+            <summary>
+            用户名在网页中的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.User">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.PasswordSelector">
+            <summary>
+            密码在网页中的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.CommonLoginHandler.SubmitSelector">
+            <summary>
+            登陆按钮的元素选择器
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.CommonLoginHandler.Login">
+            <summary>
+            登录操作的实现
+            </summary>
+            <returns>是否登录成功</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Downloader.ManualLoginHandler">
+            <summary>
+            手动登录操作的实现
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Downloader.ManualLoginHandler.Url">
+            <summary>
+            登陆的链接
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.ManualLoginHandler.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url">登陆链接</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Downloader.ManualLoginHandler.Login">
+            <summary>
+            登录操作的实现
+            </summary>
+            <returns>是否登录成功</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.EntitySpider">
+            <summary>
+            实体类爬虫的定义
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.#ctor(DotnetSpider.Core.Site)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="site">目标站点信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="name">爬虫名称</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.#ctor(System.String,DotnetSpider.Core.Site)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="name">爬虫名称</param>
+            <param name="site">目标站点信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(System.String)">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="tableName">爬虫实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(DotnetSpider.Extension.Model.IDataHandler{``0})">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(DotnetSpider.Core.Processor.ITargetUrlsExtractor)">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(DotnetSpider.Extension.Model.IDataHandler{``0},System.String)">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">爬虫实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(DotnetSpider.Core.Processor.ITargetUrlsExtractor,DotnetSpider.Extension.Model.IDataHandler{``0})">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.AddEntityType``1(DotnetSpider.Core.Processor.ITargetUrlsExtractor,DotnetSpider.Extension.Model.IDataHandler{``0},System.String)">
+            <summary>
+            添加爬虫实体类
+            </summary>
+            <typeparam name="T">爬虫实体类的类型, 必须继承自 ISpiderEntity</typeparam>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">爬虫实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.GetDefaultPipeline">
+            <summary>
+            Get the default pipeline when user forget set a pepeline to spider.
+            </summary>
+            <returns>数据管道</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.EntitySpider.InitPipelines(System.String[])">
+            <summary>
+            初始化数据管道
+            </summary>
+            <param name="arguments">运行参数</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting">
+            <summary>
+            EndPoints=localhost;User=root;Port=3306;Password=None;
+            Password should not contains ';'.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">数据库连接字符串</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.Host">
+            <summary>
+            数据库地址
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.EndPoints">
+            <summary>
+            数据库的 endpoint
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.User">
+            <summary>
+            数据库用户名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.Password">
+            <summary>
+            数据库密码
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.Port">
+            <summary>
+            数据库端口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting.WithCredentials">
+            <summary>
+            是否使用帐号密码登录数据库
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.CassandraUtil">
+            <summary>
+            Cassandra数据库的帮助类
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.CassandraUtil.CreateCluster(System.String)">
+            <summary>
+            取得Cassandra的Cluster实现
+            </summary>
+            <param name="connectString">数据库连接字符串</param>
+            <returns>Cluster实现</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.CassandraUtil.CreateCluster(DotnetSpider.Extension.Infrastructure.CassandraConnectionSetting)">
+            <summary>
+            取得Cassandra的Cluster实现
+            </summary>
+            <param name="connectionSetting">数据库设置</param>
+            <returns>Cluster实现</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.DbConnectionStringSettingsRefresher">
+            <summary>
+            从中间数据库中获取数据库连接设置的实现, 此功能用在使用一个公用数据库存储实际数据库连接字符串, 当实际数据库的用户名密码有变时, 则把新的
+            连接字符串更新到公用数据库中, 则实现所有爬虫实际更新的功能
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.DbConnectionStringSettingsRefresher.ConnectString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.DbConnectionStringSettingsRefresher.DataSource">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.DbConnectionStringSettingsRefresher.QueryString">
+            <summary>
+            查询的SQL语句
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbConnectionStringSettingsRefresher.GetNew">
+            <summary>
+            获取新的数据库连接设置
+            </summary>
+            <returns>数据库连接设置</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.DbExecutor">
+            <summary>
+            数据库执行扩展
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.DbExecutor.UseNetworkCenter">
+            <summary>
+            设置DbExecutor是否使用互联网, 如果不使用互联网上传数据则不需要通过NetworkCenter, 提高效率和稳定性
+            但这是全局设置, 默认的MySqlEntityPipeline等都是使用此扩展实现的
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecuteScalar(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL that selects a single value
+            </summary>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns>The first cell selected</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecuteReader(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL and return an System.Data.IDataReader
+            </summary>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns>An System.Data.IDataReader that can be used to iterate over the results of the SQL query.</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecute(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL
+            </summary>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyQueryFirstOrDefault(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Return a dynamic object with properties matching the columns
+            </summary>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyQuery``1(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a query, returning the data typed as per T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="buffered"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns>A sequence of data of the supplied type; if a basic type (int, string, etc) is queried then the data from the first column in assumed, otherwise an instance is created per row, and a direct column-name===member-name mapping is assumed (case insensitive).</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyQuery(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Return a sequence of dynamic objects with properties matching the columns
+            </summary>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="buffered"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.DbExecutor.MyExecuteScalar``1(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL that selects a single value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="conn"></param>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="transaction"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns>The first cell selected</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.ExcelExtensions">
+            <summary>
+            Excel扩展
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.Export(System.Data.IDbConnection,System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据库数据到EXCEL
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="sql">SQL语句</param>
+            <param name="fileName">文件名</param>
+            <param name="rewrite">是否覆盖旧文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo(System.Data.IDbConnection,System.String,System.String,System.String,System.String)">
+            <summary>
+            把数据库数据导出到EXCEL并发送邮件
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="sql">SQL语句</param>
+            <param name="fileName">文件名</param>
+            <param name="subject">邮件的标题</param>
+            <param name="emailTo">邮件接收人</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo(System.Data.IDbConnection,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            把数据库数据导出到EXCEL并发送邮件
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="sql">SQL语句</param>
+            <param name="fileName">文件名</param>
+            <param name="subject">邮件的标题</param>
+            <param name="emailTo">邮件接收人</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo(System.Data.IDbConnection,System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            把数据库数据导出到EXCEL并发送邮件
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="sql">SQL语句</param>
+            <param name="fileName">文件名</param>
+            <param name="subject">邮件的标题</param>
+            <param name="emailTo">邮件接收人</param>
+            <param name="emailHost">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+            <param name="displayName">邮件发送服务的显示名称</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo(System.Data.IDbConnection,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            把数据库数据导出到EXCEL并发送邮件
+            </summary>
+            <param name="conn">数据库连接</param>
+            <param name="sql">SQL语句</param>
+            <param name="fileName">文件名</param>
+            <param name="subject">邮件的标题</param>
+            <param name="emailTo">邮件接收人</param>
+            <param name="emailHost">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+            <param name="displayName">邮件发送服务的显示名称</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo``1(System.String)">
+            <summary>
+            文件附件发送邮件
+            </summary>
+            <typeparam name="T">爬虫实现类型</typeparam>
+            <param name="file">附件的路径</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.ExcelExtensions.EmailTo(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            文件附件发送邮件
+            </summary>
+            <param name="file">附件的路径</param>
+            <param name="subject">邮件的标题</param>
+            <param name="emailTo">邮件接收人</param>
+            <param name="emailHost">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+            <param name="displayName">邮件发送服务的显示名称</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.IConnectionStringSettingsRefresher">
+            <summary>
+            数据库连接设置的更新接口
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.IConnectionStringSettingsRefresher.GetNew">
+            <summary>
+            获取新的数据库连接设置
+            </summary>
+            <returns>数据库连接设置</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.RedisConnection">
+            <summary>
+            Redis连接信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.RedisConnection.Default">
+            <summary>
+            Redis连接信息对象
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.RedisConnection.Database">
+            <summary>
+            Describes functionality that is common to both standalone redis servers and redis clusters
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.RedisConnection.Subscriber">
+            <summary>
+            A redis connection used as the subscriber in a pub/sub scenario
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.RedisConnection.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">连接字符串</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.SelectorUtil">
+            <summary>
+            Selector的帮助类
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.SelectorUtil.GetEnviromentValue(System.String,DotnetSpider.Core.Page,System.Int32)">
+            <summary>
+            取得页面信息中的环境变量值
+            </summary>
+            <param name="field">环境变量名称</param>
+            <param name="page">页面信息</param>
+            <param name="index">当前属性在所有属性中的索引</param>
+            <returns>环境变量值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.SelectorUtil.ToSelector(DotnetSpider.Extension.Model.ISelectorAttribute)">
+            <summary>
+            把BaseSelector转换成真正的查询器
+            </summary>
+            <param name="selector">BaseSelector</param>
+            <returns>查询器</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.QueryResult">
+            <summary>
+            查询数据库结果
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.QueryResult.Result">
+            <summary>
+            查询数据库结果
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.VerificationInfo">
+            <summary>
+            验证结果
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.VerificationInfo.Pass">
+            <summary>
+            是否验证通过
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.VerificationInfo.Report">
+            <summary>
+            验证结果
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.IVerification">
+            <summary>
+            验证接口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.IVerification.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.IVerification.VerificationName">
+            <summary>
+            验证规则命名
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.IVerification.Verify(System.Data.IDbConnection)">
+            <summary>
+            执行验证操作
+            </summary>
+            <param name="conn">数据库连接</param>
+            <returns></returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.BaseVerification">
+            <summary>
+            验证接口的抽象
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.BaseVerification.Logger">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.Verifications">
+            <summary>
+            所有验证规则
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailTo">
+            <summary>
+            邮件接收人
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailHost">
+            <summary>
+            邮件发送服务地址
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.Subject">
+            <summary>
+            邮件的标题
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.Description">
+            <summary>
+            爬虫任务的描述
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailPort">
+            <summary>
+            邮件发送服务端口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailAccount">
+            <summary>
+            邮件发送服务的用户名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailPassword">
+            <summary>
+            邮件发送服务的密码
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.BaseVerification.EmailDisplayName">
+            <summary>
+            邮件发送服务的显示名称
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.#ctor(System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="emailTo">邮件接收人</param>
+            <param name="subject">邮件的标题</param>
+            <param name="host">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddSqlEqual(System.String,System.String,System.Object)">
+            <summary>
+            添加相等的判断
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="sql">SQL语句, 必须包含Result结果, 如: SELECT COUNT(*) AS Result FROM db.table1</param>
+            <param name="value">期望等于的值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddSqlLarge(System.String,System.String,System.Object)">
+            <summary>
+            添加大于的判断
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="sql">SQL语句, 必须包含Result结果, 如: SELECT COUNT(*) AS Result FROM db.table1</param>
+            <param name="value">期望大于的值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddSqlLess(System.String,System.String,System.Object)">
+            <summary>
+            添加小于的判断
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="sql">SQL语句, 必须包含Result结果, 如: SELECT COUNT(*) AS Result FROM db.table1</param>
+            <param name="value">期望小于的值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddSqlRange(System.String,System.String,System.Object,System.Object)">
+            <summary>
+            添加范围的判断
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="sql">SQL语句, 必须包含Result结果, 如: SELECT COUNT(*) AS Result FROM db.table1</param>
+            <param name="minValue">期望的最小值</param>
+            <param name="maxValue">期望的最大值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddValueEqual(System.String,System.Object,System.Object)">
+            <summary>
+            添加相等的判断, 用于如数据存在内存中
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="actual">真实值</param>
+            <param name="expected">期望值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddValueLarge(System.String,System.Object,System.Object)">
+            <summary>
+            添加大于的判断, 用于如数据存在内存中
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="actual">真实值</param>
+            <param name="value">期望大于的值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddValueLess(System.String,System.Object,System.Object)">
+            <summary>
+            添加小于的判断, 用于如数据存在内存中
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="actual">真实值</param>
+            <param name="value">期望小于的值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.AddValueRange(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            添加范围的判断, 用于如数据存在内存中
+            </summary>
+            <param name="name">规则名称</param>
+            <param name="actual">真实值</param>
+            <param name="minValue">期望的最小值</param>
+            <param name="maxValue">期望的最大值</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.BaseVerification.Report">
+            <summary>
+            验证并发送报告
+            </summary>
+            <returns>验证的最终结果</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.VerificationResult">
+            <summary>
+            验证的最终结果
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.VerificationResult.Success">
+            <summary>
+            是否通过所有验证规则的检测
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.Verification">
+            <summary>
+            验证类, 验证报告中可以在内容中插入一段样列数据
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.Verification._description">
+            <summary>
+            爬虫任务上的描述
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.Verification._reportSampleSql">
+            <summary>
+            验证报告中可以在内容中插入一段样列数据
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.Verification._exportDataSql">
+            <summary>
+            验证报告附件的数据
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.Verification._exportDataFileName">
+            <summary>
+            验证报告数据的名件名
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.Verification.#ctor(System.Type,System.String,System.String,System.String)">
+            <summary>
+            构造方法, 验证报告中可以在内容中插入一段样列数据
+            </summary>
+            <param name="type">爬虫任务的类型</param>
+            <param name="reportSampleSql">样例数据的查询语句</param>
+            <param name="dataSql">验证报告附件的数据查询SQL语句</param>
+            <param name="dataFileName">附件的数据的文件名</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.Verification.#ctor(System.Type,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="type">爬虫任务的类型</param>
+            <param name="emailTo">邮件接收人</param>
+            <param name="subject">邮件的标题</param>
+            <param name="host">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+            <param name="reportSampleSql">样例数据的查询语句</param>
+            <param name="dataSql">验证报告附件的数据查询SQL语句</param>
+            <param name="dataFileName">附件的数据的文件名</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.Verification.Report">
+            <summary>
+            验证并发送报告
+            </summary>
+            <returns>验证的最终结果</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.Verification`1">
+            <summary>
+            验证类, 验证报告中可以在内容中插入一段样列数据
+            </summary>
+            <typeparam name="TE">爬虫任务的类型</typeparam>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.Verification`1.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="reportSampleSql">样例数据的查询语句</param>
+            <param name="dataSql">附件的数据查询SQL语句</param>
+            <param name="dataFileName">附件的数据的文件名</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.Verification`1.#ctor(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="emailTo">邮件接收人</param>
+            <param name="subject">邮件的标题</param>
+            <param name="host">邮件发送服务地址</param>
+            <param name="port">邮件发送服务端口</param>
+            <param name="account">邮件发送服务的用户名</param>
+            <param name="password">邮件发送服务的密码</param>
+            <param name="reportSampleSql">样例数据的查询语句</param>
+            <param name="dataSql">附件的数据查询SQL语句</param>
+            <param name="dataFileName">附件的数据的文件名</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.Option">
+            <summary>
+            创建WebDriver的选项
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Infrastructure.Option.Default">
+            <summary>
+            默认选项
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.LoadImage">
+            <summary>
+            浏览器是否加载图片
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.AlwaysLoadNoFocusLibrary">
+            <summary>
+            浏览器是否加载组件
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.LoadFlashPlayer">
+            <summary>
+            浏览器是否加载FlashPlayer
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.Headless">
+            <summary>
+            是否使用无头浏览器模式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.Proxy">
+            <summary>
+            使用的代理地址
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Infrastructure.Option.ProxyAuthentication">
+            <summary>
+            The proxy authentication info (e.g. username:password).
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Infrastructure.WebDriverUtil">
+            <summary>
+            WebDriver 帮助类
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Infrastructure.WebDriverUtil.Open(DotnetSpider.Core.Infrastructure.Browser,DotnetSpider.Extension.Infrastructure.Option)">
+            <summary>
+            打开一个浏览器
+            </summary>
+            <param name="browser">浏览器</param>
+            <param name="option">选项</param>
+            <returns>WebDriver对象</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.EntitySelector">
+            <summary>
+            实体选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.EntitySelector.Take">
+            <summary>
+            从最终解析到的结果中取前 Take 个实体
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.EntitySelector.TakeFromHead">
+            <summary>
+            设置 Take 的方向, 默认是从头部取
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.LinkToNext">
+            <summary>
+            当前属性的值(链接)是下一个爬虫的起始链接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.LinkToNext.Extras">
+            <summary>
+            保存到起始链接的额外信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.LinkToNext.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions">
+            <summary>
+            额外选项的定义
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions.None">
+            <summary>
+            不作任何操作
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions.OuterHtml">
+            <summary>
+            For html contene
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions.InnerHtml">
+            <summary>
+            For html contene
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions.InnerText">
+            <summary>
+            For html contene
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Attribute.PropertyDefineOptions.Count">
+            <summary>
+            取的查询器结果的个数作为结果
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.PropertyDefine">
+            <summary>
+            属性选择器的定义
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Attribute.PropertyDefine.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Attribute.PropertyDefine.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="expression">表达式</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Attribute.PropertyDefine.#ctor(DotnetSpider.Core.Selector.SelectorType,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="type">选择器类型</param>
+            <param name="expression">表达式</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.PropertyDefine.NotNull">
+            <summary>
+            Define whether the field can be null. 
+            If set to 'true' and the extractor get no result, the entire class will be discarded.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.PropertyDefine.Option">
+            <summary>
+            额外选项的定义
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.PropertyDefine.Length">
+            <summary>
+            列的长度
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.PropertyDefine.IgnoreStore">
+            <summary>
+            是否不把此列数据保存到数据库
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.SharedValueSelector">
+            <summary>
+            共享值的查询器定义. 只能申明在一个爬虫实体类上面. 此查询器的结果会添加到Enviroment中, 即在爬虫实体类中的属性定义EnviromentSelector可以获取到共享值.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.SharedValueSelector.Name">
+            <summary>
+            共享值的名称
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Attribute.TargetUrlsSelector">
+            <summary>
+            目标链接选择器的定义
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.TargetUrlsSelector.XPaths">
+            <summary>
+            目标链接所在区域
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Attribute.TargetUrlsSelector.Patterns">
+            <summary>
+            匹配目标链接的正则表达式
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.BaseEntityExtractor`1">
+            <summary>
+            实体解析器的抽象
+            </summary>
+            <typeparam name="T">爬虫实体类的类型</typeparam>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.BaseEntityExtractor`1.Logger">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.BaseEntityExtractor`1.EntityDefine">
+            <summary>
+            爬虫实体类的定义
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.BaseEntityExtractor`1.Name">
+            <summary>
+            解析器的名称, 默认值是爬虫实体类型的全称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.BaseEntityExtractor`1.DataHandler">
+            <summary>
+            对解析的结果进一步加工操作
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.BaseEntityExtractor`1.#ctor(DotnetSpider.Extension.Model.IDataHandler{`0},System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.IDataHandler`1">
+            <summary>
+            对解析的结果进一步加工操作
+            </summary>
+            <typeparam name="T">数据结果的类型</typeparam>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.IDataHandler`1.Handle(System.Collections.Generic.IEnumerable{`0},DotnetSpider.Core.Page)">
+            <summary>
+            对Processor的结果进一步加工操作
+            </summary>
+            <param name="datas">数据结果</param>
+            <param name="page">页面信息</param>
+            <returns>加工后的数据结果</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.DataHandler`1">
+            <summary>
+            对解析的结果进一步加工操作
+            </summary>
+            <typeparam name="T">数据结果的类型</typeparam>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.DataHandler`1.HandleDataOject(`0,DotnetSpider.Core.Page)">
+            <summary>
+            对Processor的结果进一步加工操作
+            </summary>
+            <param name="data">数据结果</param>
+            <param name="page">页面信息</param>
+            <returns>加工后的数据结果</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.DataHandler`1.Handle(System.Collections.Generic.IEnumerable{`0},DotnetSpider.Core.Page)">
+            <summary>
+            对Processor的结果进一步加工操作
+            </summary>
+            <param name="datas">数据结果</param>
+            <param name="page">页面信息</param>
+            <returns>加工后的数据结果</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.IEntityDefine">
+            <summary>
+            爬虫实体类的定义
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.Name">
+            <summary>
+            爬虫实体类的名称, 用于解析器和数据管道之间匹配. 默认是爬虫实体类的全称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.SelectorAttribute">
+            <summary>
+            爬虫实体类的选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.Multi">
+            <summary>
+            实体结果是否多个
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.Type">
+            <summary>
+            爬虫实体类的类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.TableInfo">
+            <summary>
+            爬虫实体对应的数据库表信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.Columns">
+            <summary>
+            爬虫实体定义的数据库列信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.Take">
+            <summary>
+            从最终解析到的结果中取前 Take 个实体
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.TakeFromHead">
+            <summary>
+            设置 Take 的方向, 默认是从头部取
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.TargetUrlsSelectors">
+            <summary>
+            目标链接的选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityDefine.SharedValues">
+            <summary>
+            共享值的选择器
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.EntityDefine`1">
+            <summary>
+            爬虫实体类的定义
+            </summary>
+            <typeparam name="T">爬虫实体类的类型</typeparam>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.Name">
+            <summary>
+            爬虫实体类的名称, 用于解析器和数据管道之间匹配. 默认是爬虫实体类的全称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.SelectorAttribute">
+            <summary>
+            爬虫实体类的选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.Multi">
+            <summary>
+            实体结果是否多个
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.Type">
+            <summary>
+            爬虫实体类的类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.TableInfo">
+            <summary>
+            爬虫实体对应的数据库表信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.Columns">
+            <summary>
+            爬虫实体定义的数据库列信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.Take">
+            <summary>
+            从最终解析到的结果中取前 Take 个实体
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.TakeFromHead">
+            <summary>
+            设置 Take 的方向, 默认是从头部取
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.TargetUrlsSelectors">
+            <summary>
+            目标链接的选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.DataHandler">
+            <summary>
+            对Processor的结构结果进一步加工操作
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityDefine`1.SharedValues">
+            <summary>
+            共享值的选择器
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.EntityDefine`1.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Column">
+            <summary>
+            数据库列的定义
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Column.#ctor(System.Reflection.PropertyInfo,DotnetSpider.Extension.Model.Attribute.PropertyDefine)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="property">属性的信息</param>
+            <param name="propertyDefine">属性的定义</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.PropertyDefine">
+            <summary>
+            属性的定义
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.Property">
+            <summary>
+            属性的信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.DefaultValue">
+            <summary>
+            属性的默认值
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.Name">
+            <summary>
+            列的名称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.SelectorAttribute">
+            <summary>
+            属性值的选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.NotNull">
+            <summary>
+            属性值是否为空
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.Option">
+            <summary>
+            额外选项
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.Length">
+            <summary>
+            列的长度
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.DataType">
+            <summary>
+            属性的类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.IgnoreStore">
+            <summary>
+            是否不把此列数据保存到数据库
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Column.Formatters">
+            <summary>
+            属性值的格式化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Column.ToString">
+            <summary>
+            重载 ToString
+            </summary>
+            <returns>String</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.EntityExtractor`1">
+            <summary>
+            爬虫实体的解析器
+            </summary>
+            <typeparam name="T">爬虫实体类的类型</typeparam>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.EntityExtractor`1.#ctor(DotnetSpider.Extension.Model.IDataHandler{`0},System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.EntityExtractor`1.Extract(DotnetSpider.Core.Page)">
+            <summary>
+            解析成爬虫实体对象
+            </summary>
+            <param name="page">页面数据</param>
+            <returns>爬虫实体对象</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.EntityTable">
+            <summary>
+            爬虫实体类对应的表信息
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.Empty">
+            <summary>
+            表名的后缀为空
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.Monday">
+            <summary>
+            表名的后缀为星期一的时间
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.Today">
+            <summary>
+            表名的后缀为今天的时间 {name}_20171212
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.FirstDayOfTheMonth">
+            <summary>
+            表名的后缀为当月的第一天 {name}_20171201
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.TheMonth">
+            <summary>
+            表名的后缀为当月 {name}_201712
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.EntityTable.LastMonth">
+            <summary>
+            表名的后缀为上个月 {name}_201711
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.Database">
+            <summary>
+            数据库名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.Name">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.Postfix">
+            <summary>
+            表名后缀
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.UpdateColumns">
+            <summary>
+            需要更新的列名 string[]{ "column1", "column2" }
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.Indexs">
+            <summary>
+            需要创建的索引 string[]{ "column1,column2", "column3" }
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.EntityTable.Uniques">
+            <summary>
+            需要创建的索引 string[]{ "column1,column2", "column3" }
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.EntityTable.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="database">数据库名</param>
+            <param name="name">表名</param>
+            <param name="postfix">表名后缀</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.EntityTable.CalculateTableName">
+            <summary>
+            计算最终的表名
+            </summary>
+            <returns>表名</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.CharacterCaseFormatter">
+            <summary>
+            字符串大写化或者小写化
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.CharacterCaseFormatter.ToUpper">
+            <summary>
+            如果为 True 则把数据大写化, 如果为 False 则表数据小写化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.CharacterCaseFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.CharacterCaseFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.CutoutFormatter">
+            <summary>
+            截取数值
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.StartPart">
+            <summary>
+            起始部分的内容
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.EndPart">
+            <summary>
+            结束部分的内容
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.StartOffset">
+            <summary>
+            开始截取的偏移
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.EndOffset">
+            <summary>
+            结束截取的偏移
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.CutoutFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.DigitUnitFormater">
+            <summary>
+            把包含中文的字符串转化成数字
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.DigitUnitFormater.NumberFormat">
+            <summary>
+            数字格式化模版
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.DigitUnitFormater.FormateValue(System.Object)">
+            <summary>
+            把包含中文的字符串转化成数字
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.DigitUnitFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.DisplaceFormater">
+            <summary>
+            如果值等于EqualValue, 则返回Displacement. 比如用于: 采集的结果为: 是, 转化为 False
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.DisplaceFormater.EqualValue">
+            <summary>
+            比较的值
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.DisplaceFormater.Displacement">
+            <summary>
+            最终替换的值
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.DisplaceFormater.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.DisplaceFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.Download">
+            <summary>
+            下载内容
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Download.FormateValue(System.Object)">
+            <summary>
+            执行下载操作
+            </summary>
+            <param name="value">下载的链接</param>
+            <returns>下载完成后的文件名</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Download.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.Formatter">
+            <summary>
+            数据格式化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Formatter.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.Formatter.Name">
+            <summary>
+            格式化的名称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.Formatter.ValueWhenNull">
+            <summary>
+            如果被格式化的值为空的返回值
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Formatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Formatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.Formatter.Formate(System.Object)">
+            <summary>
+            格式化数据
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.HtmlDecodeFormater">
+            <summary>
+            把数值进行HTML解码
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.HtmlDecodeFormater.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.HtmlDecodeFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.RegexAppendFormatter">
+            <summary>
+            如果数值符合正则表达式则在数值后面追加指定的内容. 如采集到的内容为数字, 则在后面添加 "人"
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexAppendFormatter.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexAppendFormatter.AppendValue">
+            <summary>
+            追加的内容
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexAppendFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexAppendFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.RegexFormatter">
+            <summary>
+            如果能匹配正则表达式则返回True的内容, 如果不符合正则表达式则返回 False的内容
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexFormatter.Pattern">
+            <summary>
+            正则表达式格式化
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexFormatter.True">
+            <summary>
+            符合正则表达式应该返回的内容
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexFormatter.False">
+            <summary>
+            不符合正则表达式应该返回的内容
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexFormatter.Group">
+            <summary>
+            如果 True没有设值, 则返回正则表达式匹配的 Group 内容
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.RegexReplaceFormatter">
+            <summary>
+             In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexReplaceFormatter.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.RegexReplaceFormatter.NewValue">
+            <summary>
+            The replacement string
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexReplaceFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.RegexReplaceFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.ReplaceFormatter">
+            <summary>
+            Returns a new string in which all occurrences of a specified string in the current instance are replaced with another specified string.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.ReplaceFormatter.OldValue">
+            <summary>
+            需要被替换的值
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.ReplaceFormatter.NewValue">
+            <summary>
+            The string to replace all occurrences of oldValue.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.ReplaceFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.ReplaceFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.SplitFormatter">
+            <summary>
+            Splits a string into substrings based on the strings in an array. You can specify whether the substrings include empty array elements.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.SplitFormatter.Splitor">
+            <summary>
+             A string array that delimits the substrings in this string, an empty array that contains no delimiters, or null.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.SplitFormatter.ElementAt">
+            <summary>
+            分割数值后需要返回的数值索引
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.SplitFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.SplitFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.StringFormater">
+            <summary>
+            Replaces one or more format items in a specified string with the string representation of a specified object.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.StringFormater.Format">
+            <summary>
+            A composite format string.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.StringFormater.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.StringFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.TimeStampFormatter">
+            <summary>
+            把Unix时间转换成DateTime
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.TimeStampFormatter.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.TimeStampFormatter.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.TrimFormater">
+            <summary>
+            Removes all leading and trailing white-space characters from the current System.String object.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.TrimFormater.TrimType">
+            <summary>
+            Trim 类型
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Formatter.TrimFormater.TrimType.Right">
+            <summary>
+            只Trim后边
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Formatter.TrimFormater.TrimType.Left">
+            <summary>
+            只Trim前边
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Model.Formatter.TrimFormater.TrimType.All">
+            <summary>
+            Trim前后
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.TrimFormater.Type">
+            <summary>
+            Trim 类型
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.TrimFormater.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.TrimFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.Formatter.UrlEncodeFormater">
+            <summary>
+            Converts a text string into a URL-encoded string.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.Formatter.UrlEncodeFormater.Encoding">
+            <summary>
+            编码的名称
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.UrlEncodeFormater.FormateValue(System.Object)">
+            <summary>
+            实现数值的转化
+            </summary>
+            <param name="value">数值</param>
+            <returns>被格式化后的数值</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.Formatter.UrlEncodeFormater.CheckArguments">
+            <summary>
+            校验参数是否设置正确
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.IEntityExtractor`1">
+            <summary>
+            爬虫实体的解析器
+            </summary>
+            <typeparam name="T">爬虫实体类的类型</typeparam>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityExtractor`1.EntityDefine">
+            <summary>
+            爬虫实体的定义
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.IEntityExtractor`1.Extract(DotnetSpider.Core.Page)">
+            <summary>
+            解析成爬虫实体对象
+            </summary>
+            <param name="page">页面数据</param>
+            <returns>爬虫实体对象</returns>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityExtractor`1.DataHandler">
+            <summary>
+            对Processor的结果进一步加工操作
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.IEntityExtractor`1.Name">
+            <summary>
+            解析器的名称, 默认值是爬虫实体类型的全称
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.ISelectorAttribute">
+            <summary>
+            选择器特性接口
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.ISelectorAttribute.Type">
+            <summary>
+            选择器类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.ISelectorAttribute.Expression">
+            <summary>
+            表达式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.ISelectorAttribute.Arguments">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.SelectorAttribute">
+            <summary>
+            选择器特性
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.SelectorAttribute.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.SelectorAttribute.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="expression">表达式</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Model.SelectorAttribute.#ctor(DotnetSpider.Core.Selector.SelectorType,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="type">选择器类型</param>
+            <param name="expression">表达式</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.SelectorAttribute.Type">
+            <summary>
+            选择器类型
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.SelectorAttribute.Expression">
+            <summary>
+            表达式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.SelectorAttribute.Arguments">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.ISpiderEntity">
+            <summary>
+            爬虫实体类接口
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.SpiderEntity">
+            <summary>
+            爬虫实体类抽象
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.SpiderEntity.__Id">
+            <summary>
+            默认主键, 在插入数据的模式中, __Id 并没有什么作用. 在更新操作中, 需要把__id信息保存到Request的Extras中
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.SpiderEntity.CDate">
+            <summary>
+            默认的创建时间
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Model.CassandraSpiderEntity">
+            <summary>
+            Cassandra专用的爬虫实体类
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.CassandraSpiderEntity.Id">
+            <summary>
+            默认主键, 在插入数据的模式中, Id 并没有什么作用. 在更新操作中, 需要把Id信息保存到Request的Extras中
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Model.CassandraSpiderEntity.CDate">
+            <summary>
+            默认的创建时间
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Monitor.MySqlMonitor">
+            <summary>
+            数据库监控器, 把状态信息存到MySql数据库中
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Monitor.MySqlMonitor.Logger">
+            <summary>
+            日志接口
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Monitor.MySqlMonitor.#ctor(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="taskId">任务编号</param>
+            <param name="identity">任务标识</param>
+            <param name="isDbOnly">是否仅上报数据库</param>
+            <param name="connectionString">连接字符串</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Monitor.MySqlMonitor.Report(System.String,System.String,System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int32)">
+            <summary>
+            上报爬虫状态
+            </summary>
+            <param name="identity">唯一标识</param>
+            <param name="taskId">任务编号</param>
+            <param name="status">爬虫状态: 运行、暂停、退出、完成</param>
+            <param name="left">剩余的目标链接数</param>
+            <param name="total">总的需要采集的链接数</param>
+            <param name="success">成功采集的链接数</param>
+            <param name="error">采集出错的链接数</param>
+            <param name="avgDownloadSpeed">平均下载一个链接需要的时间(豪秒)</param>
+            <param name="avgProcessorSpeed">平均解析一个页面需要的时间(豪秒)</param>
+            <param name="avgPipelineSpeed">数据管道处理一次数据结果需要的时间(豪秒)</param>
+            <param name="threadNum">爬虫线程数</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.MySqlExecuteRecord">
+            <summary>
+            MySql 运行记录接口
+            程序在运行前应该添加相应的运行记录, 任务结束后删除对应的记录, 企业服务依赖运行记录数据显示正在运行的任务
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.MySqlExecuteRecord.Add(System.String,System.String,System.String)">
+            <summary>
+            添加运行记录
+            </summary>
+            <param name="taskId">任务编号</param>
+            <param name="name">任务名称</param>
+            <param name="identity">任务标识</param>
+            <returns>是否添加成功</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.MySqlExecuteRecord.Remove(System.String,System.String,System.String)">
+            <summary>
+            删除运行记录
+            </summary>
+            <param name="taskId">任务编号</param>
+            <param name="name">任务名称</param>
+            <param name="identity">任务标识</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline">
+            <summary>
+            爬虫实体类对应的数据库的数据管道
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.CreateConnectionStringSettings(System.String)">
+            <summary>
+            通过连接字符串获取ConnectionStringSettings对象, 用于DbFactory生产IDbConnection
+            </summary>
+            <param name="connectString">连接字符器</param>
+            <returns>ConnectionStringSettings对象</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.InitAllSqlOfEntity(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            初始化所有相关的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.DefaultPipelineModel">
+            <summary>
+            默认的数据管道模式
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.UpdateConnectString">
+            <summary>
+            更新数据库连接字符串的接口, 如果自定义的连接字符串无法使用, 则会尝试通过更新连接字符串来重新连接
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.ConnectionStringSettings">
+            <summary>
+            ConnectionStringSettings对象, 用于DbFactory生产IDbConnection
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.#ctor(System.String,DotnetSpider.Extension.Pipeline.PipelineMode)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">数据库连接字符串</param>
+            <param name="pipelineMode">数据管道模式</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.Init">
+            <summary>
+            在使用数据管道前, 进行一些初始化工作, 不是所有的数据管道都需要进行初始化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.InitDatabaseAndTable">
+            <summary>
+            初始化数据库和相关表
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityDbPipeline.GetUpdateColumns(System.String)">
+            <summary>
+            For test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.BaseEntityPipeline">
+            <summary>
+            爬虫实体类对应的数据管道
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.BaseEntityPipeline.EntityAdapters">
+            <summary>
+            数据管道使用的实体中间信息
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理爬虫实体解析器解析到的实体数据结果
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityPipeline.Process(System.Collections.Generic.IEnumerable{DotnetSpider.Core.ResultItems},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理页面解析器解析到的数据结果
+            </summary>
+            <param name="resultItems">数据结果</param>
+            <param name="spider">爬虫</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.BaseEntityPipeline.GetPipelineFromAppConfig">
+            <summary>
+            从配置文件中获取默认的数据管道
+            </summary>
+            <returns>数据管道</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到Cassandra中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">连接字符串</param>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.DefaultPipelineModel">
+            <summary>
+            数据管道模式
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理爬虫实体解析器解析到的实体数据结果
+            </summary>
+            <param name="name">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.Init">
+            <summary>
+            在使用数据管道前, 进行一些初始化工作, 不是所有的数据管道都需要进行初始化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CassandraEntityPipeline.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.CollectionEntityPipeline">
+            <summary>
+            内存数据管道, 把所有数据结果存到内存列表中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CollectionEntityPipeline.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CollectionEntityPipeline.GetCollection(System.String)">
+            <summary>
+            取得实体名称的所有数据
+            </summary>
+            <param name="entityName">爬虫实体名称</param>
+            <returns>实体数据</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CollectionEntityPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.CollectionEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            存储页面解析器解析到的数据结果到内存中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.ConsoleEntityPipeline">
+            <summary>
+            Print datas in console
+            Usually used in test.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ConsoleEntityPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义, Console pipeline不需要
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ConsoleEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            打印爬虫实体解析器解析到的实体数据结果到控制台
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline">
+            <summary>
+            默认的MySql数据管道, 用于存储下载的HTML数据: 按URL, 标题, 内容 存储
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.ConnectionStringSettings">
+            <summary>
+            数据库连接配置
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.Database">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.TableName">
+            <summary>
+            数据表名
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="database">数据库名</param>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.#ctor(System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">连接字符串</param>
+            <param name="database">数据库名</param>
+            <param name="tableName">表名</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.DefaultMySqlPipeline.Process(System.Collections.Generic.IEnumerable{DotnetSpider.Core.ResultItems},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理页面解析器解析到的数据结果
+            </summary>
+            <param name="resultItems">数据结果</param>
+            <param name="spider">爬虫</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.EntityAdapter">
+            <summary>
+            数据库管道使用的实体中间信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.Table">
+            <summary>
+            数据库表的信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.Columns">
+            <summary>
+            爬虫实体类定义的列信息
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.InsertSql">
+            <summary>
+            插入的SQL语句
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.InsertAndIgnoreDuplicateSql">
+            <summary>
+            插入并且忽略重复数据的SQL
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.UpdateSql">
+            <summary>
+            更新的SQL
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.SelectSql">
+            <summary>
+            查询的SQL
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.InsertNewAndUpdateOldSql">
+            <summary>
+            插入新的或者更新旧的数据SQL
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.EntityAdapter.PipelineMode">
+            <summary>
+            数据管理模式
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.EntityAdapter.#ctor(DotnetSpider.Extension.Model.EntityTable,System.Collections.Generic.List{DotnetSpider.Extension.Model.Column})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="table">数据库表的信息</param>
+            <param name="columns">爬虫实体类定义的列信息</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.ExcelEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到Excel中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据存到Excel中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelEntityPipeline.GetFiles">
+            <summary>
+            取得数据管道中所有EXCEL文件的路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelEntityPipeline.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.ExcelPipeline`1">
+            <summary>
+            把解析到的爬虫实体数据存到Excel中, 需要在PageProcessor中把数据存到ResultItem中
+            page.AddResultItem(typeof(T).FullName, t);
+            page.AddResultItem(typeof(T).FullName, List`T`);
+            </summary>
+            <typeparam name="T">数据对象</typeparam>
+        </member>
+        <member name="P:DotnetSpider.Extension.Pipeline.ExcelPipeline`1.ExcelPath">
+            <summary>
+            Excel 文件路径
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelPipeline`1.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelPipeline`1.Process(System.Collections.Generic.IEnumerable{DotnetSpider.Core.ResultItems},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据存到Excel中
+            </summary>
+            <param name="resultItems">数据结果</param>
+            <param name="spider">爬虫</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ExcelPipeline`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.HttpMySqlEntityPipeline">
+            <summary>
+            通过HTTP上传数据到企业服务
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.HttpMySqlEntityPipeline.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="api">上传的API</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.HttpMySqlEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            通过HTTP上传数据到企业服务
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.ICollectionEntityPipeline">
+            <summary>
+            数据结果的收集接口
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.ICollectionEntityPipeline.GetCollection(System.String)">
+            <summary>
+            取得实体名称 entityName 的所有数据结果
+            </summary>
+            <param name="entityName">实体名称</param>
+            <returns>数据结果</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.IEntityPipeline">
+            <summary>
+            爬虫实体类对应的数据管道
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.IEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理爬虫实体解析器解析到的实体数据结果
+            </summary>
+            <param name="name">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.JsonFileEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据序列化成JSON并存到文件中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.JsonFileEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据序列化成JSON并存到文件中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.JsonFileEntityPipeline.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.MongoDbEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到MongoDb中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MongoDbEntityPipeline.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">连接字符串</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MongoDbEntityPipeline.AddEntity(DotnetSpider.Extension.Model.IEntityDefine)">
+            <summary>
+            添加爬虫实体类的定义
+            </summary>
+            <param name="entityDefine">爬虫实体类的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MongoDbEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据存到MongoDb中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到MySql中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.#ctor(System.String,DotnetSpider.Extension.Pipeline.PipelineMode)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">数据库连接字符串, 如果为空框架会尝试从配置文件中读取</param>
+            <param name="pipelineMode">数据管道模式</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.CreateConnectionStringSettings(System.String)">
+            <summary>
+            通过连接字符串获取ConnectionStringSettings对象, 用于DbFactory生产IDbConnection
+            </summary>
+            <param name="connectString">连接字符器</param>
+            <returns>ConnectionStringSettings对象</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据存到MySql中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.InitAllSqlOfEntity(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            初始化所有相关的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.GenerateCreateDatabaseSql(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            构造创建数据库的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+            <returns>SQL语句</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.GenerateIfDatabaseExistsSql(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            构造判断数据库是否存在的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+            <returns>SQL语句</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.GenerateCreateTableSql(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            构造创建数据表的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+            <returns>SQL语句</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlEntityPipeline.InitDatabaseAndTable">
+            <summary>
+            初始化数据库和相关表
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存成SQL文件, 支持两种模式
+            LoadFile是批量导入模式通过命令 LOAD DATA LOCAL INFILE '{filePath}' INTO TABLE `{schema}`.`{dababase}` FIELDS TERMINATED BY '$'  ENCLOSED BY '#' LINES TERMINATED BY '@END@' IGNORE 1 LINES; 还原。
+            InsertSql是完整的Insert SQL语句, 需要一条条执行来导入数据
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.FileType.LoadFile">
+            <summary>
+            LOAD
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.FileType.InsertSql">
+            <summary>
+            INSERT SQL语句
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.#ctor(DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.FileType)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="fileType">文件类型</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            处理爬虫实体解析器解析到的实体数据结果
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.MySqlFileEntityPipeline.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.PipelineMode">
+            <summary>
+            数据管道模式
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.PipelineMode.Insert">
+             <summary>
+            插数据, 不对主键或Unique重复做较验
+             </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.PipelineMode.InsertAndIgnoreDuplicate">
+            <summary>
+            只插入新数据, 如果主键或Unique有重复则忽略
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.PipelineMode.InsertNewAndUpdateOld">
+            <summary>
+            插入新数据, 如果主键或Unique有重复则更新数据
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.Pipeline.PipelineMode.Update">
+            <summary>
+            更新数据
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.PostgreSqlEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到PostgreSQL中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.PostgreSqlEntityPipeline.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">数据库连接字符串, 如果为空框架会尝试从配置文件中读取</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline">
+            <summary>
+            把解析到的爬虫实体数据存到SqlServer中
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.#ctor(System.String,DotnetSpider.Extension.Pipeline.PipelineMode)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">数据库连接字符串, 如果为空框架会尝试从配置文件中读取</param>
+            <param name="pipelineMode">数据管道模式</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.CreateConnectionStringSettings(System.String)">
+            <summary>
+            通过连接字符串获取ConnectionStringSettings对象, 用于DbFactory生产IDbConnection
+            </summary>
+            <param name="connectString">连接字符器</param>
+            <returns>ConnectionStringSettings对象</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.InitAllSqlOfEntity(DotnetSpider.Extension.Pipeline.EntityAdapter)">
+            <summary>
+            初始化所有相关的SQL语句
+            </summary>
+            <param name="adapter">数据库管道使用的实体中间信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.InitDatabaseAndTable">
+            <summary>
+            初始化数据库和相关表
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Pipeline.SqlServerEntityPipeline.Process(System.String,System.Collections.Generic.IEnumerable{System.Object},DotnetSpider.Core.ISpider)">
+            <summary>
+            把解析到的爬虫实体数据存到SqlServer中
+            </summary>
+            <param name="entityName">爬虫实体类的名称</param>
+            <param name="datas">实体类数据</param>
+            <param name="spider">爬虫</param>
+            <returns>最终影响结果数量(如数据库影响行数)</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Processor.EntityProcessor`1">
+            <summary>
+            针对爬虫实体类的页面解析器、抽取器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.EntityProcessor`1.Extractor">
+            <summary>
+            针对爬虫实体类的页面解析器、抽取器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.EntityProcessor`1.EntityDefine">
+            <summary>
+            爬虫实体类的定义
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Extension.Model.IEntityExtractor{`0},DotnetSpider.Core.Processor.ITargetUrlsExtractor,DotnetSpider.Extension.Model.IDataHandler{`0},System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="extractor">爬虫实体的解析器</param>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Core.Processor.ITargetUrlsExtractor,DotnetSpider.Extension.Model.IDataHandler{`0},System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Extension.Model.IDataHandler{`0})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Core.Processor.ITargetUrlsExtractor)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="targetUrlsExtractor">目标链接的解析、筛选器</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Extension.Model.IDataHandler{`0},System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="dataHandler">对解析的结果进一步加工操作</param>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="tableName">实体在数据库中的表名, 此优先级高于EntitySelector中的定义</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor(DotnetSpider.Extension.Model.IEntityExtractor{`0})">
+            <summary>
+            构造方法
+            </summary>
+            <param name="extractor">爬虫实体的解析器</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.ContainsTargetUrlRegion(System.String)">
+            <summary>
+            Only used for test
+            </summary>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.GetTargetUrlPatterns(System.String)">
+            <summary>
+            Only used for test
+            </summary>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.EntityProcessor`1.Handle(DotnetSpider.Core.Page)">
+            <summary>
+            解析操作
+            </summary>
+            <param name="page">页面数据</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.Processor.IEntityProcessor">
+            <summary>
+            针对爬虫实体类的页面解析器、抽取器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.IEntityProcessor.EntityDefine">
+            <summary>
+            爬虫实体类的定义
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Processor.PaginationTermination">
+            <summary>
+            翻页目标链接的中止器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.PaginationTermination.TotalPageSelector">
+            <summary>
+            取得总页数的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.PaginationTermination.TotalPageFormatters">
+            <summary>
+            对总页数的格式化
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.PaginationTermination.CurrenctPageSelector">
+            <summary>
+            取得当前页的元素选择器
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Processor.PaginationTermination.CurrnetPageFormatters">
+            <summary>
+            对当前页的格式化
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Processor.PaginationTermination.IsTermination(DotnetSpider.Core.Page)">
+            <summary>
+            Return true, skip all urls from target urls extractor.
+            </summary>
+            <param name="page">页面数据</param>
+            <returns>是否到了最终一个链接</returns>
+        </member>
+        <member name="T:DotnetSpider.Extension.Redial.Redialer.H3CSshAdslRedialer">
+            <summary>
+            针对H3C路由器实现的拨号器
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Redial.Redialer.H3CSshAdslRedialer.#ctor(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="sshhost">路由器网关的IP</param>
+            <param name="sshPort">路由器SSH的连接端口号, 默认是22</param>
+            <param name="sshuser">路由器SSH的用户名</param>
+            <param name="sshpass">路由器SSH的密码</param>
+            <param name="interfaceName">连接的名称(H3C有些路由器是可以多路ADSL拨号的, 在此指定需要重拨的是哪一路)</param>
+            <param name="user">ADSL的用户名</param>
+            <param name="password">ADSL的密码</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Redial.Redialer.H3CSshAdslRedialer.Redial">
+            <summary>
+            拨号
+            </summary>
+        </member>
+        <member name="T:DotnetSpider.Extension.Scheduler.RedisScheduler">
+            <summary>
+            Use Redis as url scheduler for distributed crawlers.
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.BatchCount">
+            <summary>
+            批量加载时的每批次加载数
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.UseInternet">
+            <summary>
+            RedisScheduler是否会使用互联网
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connectString">Redis连接字符串</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.Init(DotnetSpider.Core.ISpider)">
+            <summary>
+            初始化队列
+            </summary>
+            <param name="spider">爬虫对象</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.ResetDuplicateCheck">
+            <summary>
+            Reset duplicate check.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.IsDuplicate(DotnetSpider.Core.Request)">
+            <summary>
+            Check whether the request is duplicate.
+            </summary>
+            <param name="request">Request</param>
+            <returns>Whether the request is duplicate.</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.Poll">
+            <summary>
+            取得一个需要处理的请求对象
+            </summary>
+            <returns>请求对象</returns>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.LeftRequestsCount">
+            <summary>
+            剩余链接数
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.TotalRequestsCount">
+            <summary>
+            总的链接数
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.SuccessRequestsCount">
+            <summary>
+            采集成功的链接数
+            </summary>
+        </member>
+        <member name="P:DotnetSpider.Extension.Scheduler.RedisScheduler.ErrorRequestsCount">
+            <summary>
+            采集失败的次数, 不是链接数, 如果一个链接采集多次都失败会记录多次
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.IncreaseSuccessCount">
+            <summary>
+            采集成功的链接数加 1
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.IncreaseErrorCount">
+            <summary>
+            采集失败的次数加 1
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.Import(System.Collections.Generic.IEnumerable{DotnetSpider.Core.Request})">
+            <summary>
+            批量导入
+            </summary>
+            <param name="requests">请求对象</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.ToList">
+            <summary>
+            把队列中的请求对象转换成List
+            </summary>
+            <returns>请求对象的List</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.Scheduler.RedisScheduler.PushWhenNoDuplicate(DotnetSpider.Core.Request)">
+            <summary>
+            如果链接不是重复的就添加到队列中
+            </summary>
+            <param name="request">请求对象</param>
+        </member>
+        <member name="T:DotnetSpider.Extension.DbStartUrlsBuilder">
+            <summary>
+            起始链接构造器
+            </summary>
+        </member>
+        <member name="F:DotnetSpider.Extension.DbStartUrlsBuilder._formateStrings">
+            <summary>
+            拼接Url的方式, 会把Columns对应列的数据传入
+            https://s.taobao.com/search?q={0},s=0;
+            </summary>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.FormateDataObject(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            从数据库中查询出的结果可以先做一下格式
+            </summary>
+            <param name="item">数据对象</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.FormateRequest(DotnetSpider.Core.Request)">
+            <summary>
+            格式化最终的请求信息
+            </summary>
+            <param name="request">请求信息</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.#ctor(System.String,System.String[],System.String[])">
+            <summary>
+            构造方法
+            </summary>
+            <param name="sql">SQL 语句</param>
+            <param name="formateArguments">起始链接格式化参数</param>
+            <param name="formateStrings">起始链接格式化模版</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.#ctor(DotnetSpider.Core.Infrastructure.Database.Database,System.String,System.String,System.String[],System.String[])">
+            <summary>
+            构造方法
+            </summary>
+            <param name="source">数据库类型</param>
+            <param name="connectString">数据库连接字符串</param>
+            <param name="sql">SQL 语句</param>
+            <param name="formateArguments">起始链接格式化参数</param>
+            <param name="formateStrings">起始链接格式化模版</param>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.QueryDatas">
+            <summary>
+            查询数据库结果
+            </summary>
+            <returns>数据库结果</returns>
+        </member>
+        <member name="M:DotnetSpider.Extension.DbStartUrlsBuilder.Build(DotnetSpider.Core.Site)">
+            <summary>
+            构造起始链接对象并添加到网站信息对象中
+            </summary>
+            <param name="site">网站信息</param>
+        </member>
+    </members>
+</doc>
