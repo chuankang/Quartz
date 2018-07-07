@@ -74,6 +74,7 @@
     <Compile Include="JobService.cs" />
     <Compile Include="Jobs\TestJob.cs" />
     <Compile Include="Jobs\TestJob2.cs" />
+    <Compile Include="Models\Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleBase.cs" />
@@ -92,10 +93,6 @@
     <ProjectReference Include="..\Commons\Commons.csproj">
       <Project>{483cdcc6-a54b-4c5a-ae8f-364edc8c8b46}</Project>
       <Name>Commons</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{7dccc698-2782-41c7-bb09-759f55f00340}</Project>
-      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

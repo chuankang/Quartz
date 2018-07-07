@@ -7,3 +7,11 @@ D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.csproj.CoreCo
 D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.csproj.CopyComplete
 D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.dll
 D:\OwnSpace\gitQuartz\Quartz\JobSchedule\Commons\obj\Debug\Commons.pdb
+D:\Git\123\Quartz\JobSchedule\Commons\bin\Debug\Commons.dll
+D:\Git\123\Quartz\JobSchedule\Commons\bin\Debug\Commons.pdb
+D:\Git\123\Quartz\JobSchedule\Commons\bin\Debug\Dapper.dll
+D:\Git\123\Quartz\JobSchedule\Commons\bin\Debug\Dapper.xml
+D:\Git\123\Quartz\JobSchedule\Commons\obj\Debug\Commons.csprojResolveAssemblyReference.cache
+D:\Git\123\Quartz\JobSchedule\Commons\obj\Debug\Commons.csproj.CoreCompileInputs.cache
+D:\Git\123\Quartz\JobSchedule\Commons\obj\Debug\Commons.dll
+D:\Git\123\Quartz\JobSchedule\Commons\obj\Debug\Commons.pdb
