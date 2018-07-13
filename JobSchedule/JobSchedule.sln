@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Commons\Commons.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Spider", "DotNet.Spider\DotNet.Spider.csproj", "{901D408F-CC2D-4357-9E53-3E18886B658D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.Web", "Quartz.Web\Quartz.Web.csproj", "{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{901D408F-CC2D-4357-9E53-3E18886B658D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{901D408F-CC2D-4357-9E53-3E18886B658D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{901D408F-CC2D-4357-9E53-3E18886B658D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

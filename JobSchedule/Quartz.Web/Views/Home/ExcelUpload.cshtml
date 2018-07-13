@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ExcelUpload";
+}
+
+<h2>ExcelUpload</h2>
+<form action="/Home/ExcelUploadSubmit" method="post" enctype="multipart/form-data">
+    <p>  
+        Title: <input id="excelTitle" name="excelTitle" type="text" />
+    </p>
+    <p>  
+        File: <input id="excelFile" name="excelFile" type="file" />
+    </p>
+    <p> 
+        <input id="Submit1" type="submit" value="submit"/></p>
+</form>
+
