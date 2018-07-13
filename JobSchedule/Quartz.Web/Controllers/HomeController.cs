@@ -219,7 +219,6 @@ namespace Quartz.Web.Controllers
 
 					var productList = new List<Product>();
 
-
 					if (issuerNameCellIndex > -1 && insturyCellIndex > -1 && pValueCellIndex > -1
 						&& issuerRatingCellIndex > -1 && natureCellIndex > -1 && dateCellIndex > -1)
 					{
@@ -233,7 +232,6 @@ namespace Quartz.Web.Controllers
 							{
 								FundId = 11500005,
 								PvalueId = 1,
-
 								IssuerName = currentRow.GetCell(issuerNameCellIndex).StringCellValue,
 								Instury = currentRow.GetCell(insturyCellIndex).StringCellValue,
 								PValue = currentRow.GetCell(pValueCellIndex).NumericCellValue.ToString(),
