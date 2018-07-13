@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NPOI.HSSF.UserModel;
 
 namespace Quartz.Web.Controllers
 {
@@ -73,7 +74,7 @@ namespace Quartz.Web.Controllers
 
 				////解析上传的Excel
 				////使用HSSF类，支持2007以前的excel（文件扩展名为xls），而XSSH支持07以后的（文件扩展名为xlsx）。
-
+				//HSSFWorkbook workbook = new HSSFWorkbook(excelFile.InputStream);
 				//方式1：保存上传文件
 				//excelFile.SaveAs(serverpath + @"\Upload\" + fileName);
 				//FileStream inputStream = new FileStream(serverpath + @"\Upload\" + fileName, FileMode.Open);
@@ -225,10 +226,10 @@ namespace Quartz.Web.Controllers
 					{
 						var pvaluedate = sheet.GetRow(headerRowIndex + 1).GetCell(dateCellIndex).DateCellValue;
 
-						for (int i = headerRowIndex+1; i <= totalRowCount; i++)
+						for (int i = headerRowIndex + 1; i <= totalRowCount; i++)
 						{
 							IRow currentRow = sheet.GetRow(i);
-							
+
 							productList.Add(new Product
 							{
 								FundId = 11500005,
@@ -241,7 +242,7 @@ namespace Quartz.Web.Controllers
 							});
 						}
 					}
-					
+
 					ViewData["dt"] = productList;
 
 					var exportData = productList.Select(t => new[]
@@ -250,9 +251,14 @@ namespace Quartz.Web.Controllers
 						t.Nature,
 						t.IssuerRating
 					});
-
+					string[] excelHeadText =
+					{
+					    "主体名称",
+					    "企业",
+					    "主体评级"
+					};
 					//将数据写入名称为‘导出文件名称.xlsx’Excel中
-					string filename = Commons.Utils.ExportToFile(@"D:\Data", "导出文件名称", HeaderText, exportData);
+					string filename = Commons.Utils.ExportToFile(@"D:\Data", "导出文件名称", excelHeadText, exportData);
 				}
 			}
 
@@ -275,20 +281,7 @@ namespace Quartz.Web.Controllers
 
 			return File(fileStream, mime, filename);
 		}
-
-
-
-		/// <summary>
-		/// Excel头名称
-		/// </summary>
-		private static readonly string[] HeaderText =
-		{
-			"主体名称",
-			"企业",
-			"主体评级"
-		};
-
-
+		
 		public class Product
 		{
 			public int FundId { get; set; }
@@ -330,6 +323,5 @@ namespace Quartz.Web.Controllers
 				return new string(c);
 			}
 		}
-		
 	}
 }
