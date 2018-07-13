@@ -59,7 +59,7 @@ namespace Quartz.Web.Controllers
 				{
 					Directory.CreateDirectory(dir);
 				}
-				
+
 				//parse the excel
 				//save the excel content in the datatable 
 				var dt = new DataTable();
@@ -131,8 +131,129 @@ namespace Quartz.Web.Controllers
 			return View("ExcelUpload");
 		}
 
+
+		/// <summary>
+		/// EXCEL上传 选择上传
+		/// </summary>
+		public ActionResult ExcelUploadSubmit2(string excelTitle)
+		{
+			//取到上传域
+			HttpPostedFileBase excelFile = Request.Files["excelFile"];
+
+			if (null != excelFile)
+			{
+				//取到文件的名称
+				string fileName = Path.GetFileName(excelFile.FileName);
+				if (fileName != null && fileName.Equals(""))
+				{
+					//没有选择文件就上传的话，则跳回到上传页面
+					return View("ExcelUpload");
+				}
+
+				//方式2：文件流的形式读取，不保存excel到本地
+				var workbook = new XSSFWorkbook(excelFile.InputStream);
+
+				//var sheet = workbook.GetSheetAt(0) as XSSFSheet;
+
+				ISheet sheet = workbook.GetSheetAt(0);
+
+				int totalRowCount = sheet.LastRowNum; //总行数
+				int headerRowIndex = 0,
+					issuerNameCellIndex = -1,
+					insturyCellIndex = -1,
+					pValueCellIndex = -1,
+					issuerRatingCellIndex = -1,
+					natureCellIndex = -1,
+					dateCellIndex = -1;
+
+				IRow headerRow = null;
+				while (headerRowIndex < totalRowCount)
+				{
+					headerRow = sheet.GetRow(headerRowIndex);
+					if (headerRow.GetCell(5) != null && headerRow.GetCell(5).ToString() == "P值时间")
+					{
+						break;
+					}
+
+					headerRowIndex += 1;
+				}
+
+				if (headerRowIndex < totalRowCount)
+				{
+					for (var i = 0; i < 6; i++)
+					{
+						if (headerRow == null)
+						{
+							continue;
+						}
+
+						var cell = headerRow.GetCell(i);
+						var headerText = cell == null ? string.Empty : cell.ToString();
+
+						if (headerText == "主体名称")
+						{
+							issuerNameCellIndex = i;
+						}
+						else if (headerText == "行业")
+						{
+							insturyCellIndex = i;
+						}
+						else if (headerText == "P值")
+						{
+							pValueCellIndex = i;
+						}
+						else if (headerText == "主体评级")
+						{
+							issuerRatingCellIndex = i;
+						}
+						else if (headerText == "企业性质")
+						{
+							natureCellIndex = i;
+						}
+						else if (headerText == "P值时间")
+						{
+							dateCellIndex = i;
+						}
+
+					}
+
+					var productList = new List<Product>();
+
+
+					if (issuerNameCellIndex > -1 && insturyCellIndex > -1 && pValueCellIndex > -1
+						&& issuerRatingCellIndex > -1 && natureCellIndex > -1 && dateCellIndex > -1)
+					{
+						var pvaluedate = sheet.GetRow(headerRowIndex + 1).GetCell(dateCellIndex).DateCellValue;
+
+						for (int i = headerRowIndex+1; i <= totalRowCount; i++)
+						{
+							IRow currentRow = sheet.GetRow(i);
+							
+							productList.Add(new Product
+							{
+								FundId = 11500005,
+								PvalueId = 1,
+
+								IssuerName = currentRow.GetCell(issuerNameCellIndex).StringCellValue,
+								Instury = currentRow.GetCell(insturyCellIndex).StringCellValue,
+								PValue = currentRow.GetCell(pValueCellIndex).NumericCellValue.ToString(),
+								IssuerRating = currentRow.GetCell(issuerRatingCellIndex).StringCellValue,
+								Nature = currentRow.GetCell(natureCellIndex).StringCellValue,
+							});
+						}
+					}
+					
+					ViewData["dt"] = productList;
+				}
+			}
+
+			return View("ExcelUpload");
+		}
+
 		public class Product
 		{
+			public int FundId { get; set; }
+			public int PvalueId { get; set; }
 			public string IssuerName { get; set; }
 			public string Instury { get; set; }
 			public string PValue { get; set; }
