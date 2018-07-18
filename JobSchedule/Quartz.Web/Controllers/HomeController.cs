@@ -137,8 +137,9 @@ namespace Quartz.Web.Controllers
 		/// <summary>
 		/// EXCEL上传 选择上传
 		/// </summary>
-		public ActionResult ExcelUploadSubmit2(string excelTitle)
+		public ActionResult ExcelUploadSubmit2(string excelTitle, HttpPostedFileBase file)
 		{
+			var x = file.InputStream;
 			//取到上传域
 			HttpPostedFileBase excelFile = Request.Files["excelFile"];
 
@@ -153,11 +154,19 @@ namespace Quartz.Web.Controllers
 				}
 
 				//方式2：文件流的形式读取，不保存excel到本地
-				var workbook = new XSSFWorkbook(excelFile.InputStream);
+				IWorkbook workbook = null;
+				if (file.FileName.IndexOf(".xlsx", StringComparison.Ordinal) > 0)
+				{
+					workbook = new XSSFWorkbook(file.InputStream);//excel的版本2007及以上
+				}
+				else if (file.FileName.IndexOf(".xls", StringComparison.Ordinal) > 0)
+				{
+					workbook = new HSSFWorkbook(file.InputStream);//excel的版本2003
+				}
 
 				//var sheet = workbook.GetSheetAt(0) as XSSFSheet;
 
-				ISheet sheet = workbook.GetSheetAt(0);
+				ISheet sheet = workbook?.GetSheetAt(0);
 
 				int totalRowCount = sheet.LastRowNum; //总行数
 				int headerRowIndex = 0,
@@ -253,9 +262,9 @@ namespace Quartz.Web.Controllers
 					});
 					string[] excelHeadText =
 					{
-					    "主体名称",
-					    "企业",
-					    "主体评级"
+						"主体名称",
+						"企业",
+						"主体评级"
 					};
 					//将数据写入名称为‘导出文件名称.xlsx’Excel中
 					string filename = Commons.Utils.ExportToFile(@"D:\Data", "导出文件名称", excelHeadText, exportData);
@@ -281,7 +290,7 @@ namespace Quartz.Web.Controllers
 
 			return File(fileStream, mime, filename);
 		}
-		
+
 		public class Product
 		{
 			public int FundId { get; set; }
