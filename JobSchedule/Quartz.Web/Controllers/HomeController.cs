@@ -37,6 +37,28 @@ namespace Quartz.Web.Controllers
 			return View();
 		}
 
+
+		public JsonResult GetTestData()
+		{
+			var ret = new
+			{
+				id = 1,
+				username = "张三",
+				sex = "男",
+				city = "上海",
+				sign = "我就是我，颜色不一样的烟火",
+				experience = "210",
+				score = "123",
+				classify = "",
+				wealth = "",
+				right = "",
+
+			};
+			return Json(ret,JsonRequestBehavior.AllowGet);
+		}
+
+
+
 		/// <summary>
 		/// EXCEL上传
 		/// </summary>
