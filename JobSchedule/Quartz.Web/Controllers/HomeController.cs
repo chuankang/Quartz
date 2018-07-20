@@ -41,10 +41,17 @@ namespace Quartz.Web.Controllers
 		/// <summary>
 		/// Layui获取测试数据
 		/// </summary>
-		public JsonResult GetTestData()
+		public JsonResult GetTestData(int page, int limit)
 		{
-			var list =new  List<TestLayui>();
-			for (int i = 1; i < 12; i++)
+			var request = new PageRequestEntity<TestLayui>
+			{
+				CurrentPage = page,
+				PageSize = limit
+			};
+
+			var testLayuis = new List<TestLayui>();
+			var rd = new Random();
+			for (var i = 1; i < 100; i++)
 			{
 				var data = new TestLayui()
 				{
@@ -53,21 +60,18 @@ namespace Quartz.Web.Controllers
 					Sex = "男",
 					City = "上海",
 					Sign = "我就是我，颜色不一样的烟火",
-					Experience = "210",
-					Score = "123",
+					Experience = rd.Next(100, 999),
+					Score = rd.Next(1, 100),
 					Classify = "程序员",
-					Wealth = "100w"
+					Wealth = rd.Next(1000, 9999).ToString() + "w"
 
 				};
-				list.Add(data);
+				testLayuis.Add(data);
 			}
-			
-			var retEntity = new ResultEntity<object>
-			{
-				code = 0,
-				data = list
-			};
-			return Json(retEntity, JsonRequestBehavior.AllowGet);
+
+			var result = request.WithPagedItems(testLayuis);
+
+			return Json(result, JsonRequestBehavior.AllowGet);
 		}
 
 		/// <summary>
