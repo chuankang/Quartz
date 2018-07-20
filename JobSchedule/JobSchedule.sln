@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Spider", "DotNet.Spi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.Web", "Quartz.Web\Quartz.Web.csproj", "{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.Models", "Quartz.Models\Quartz.Models.csproj", "{DC4FC083-91B0-4782-A64F-BE81B09CB15C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1208DD6-3CD8-4E5F-A076-70EA9E55F95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4FC083-91B0-4782-A64F-BE81B09CB15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4FC083-91B0-4782-A64F-BE81B09CB15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4FC083-91B0-4782-A64F-BE81B09CB15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4FC083-91B0-4782-A64F-BE81B09CB15C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

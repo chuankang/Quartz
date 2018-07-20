@@ -355,6 +355,10 @@
       <Project>{483cdcc6-a54b-4c5a-ae8f-364edc8c8b46}</Project>
       <Name>Commons</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quartz.Models\Quartz.Models.csproj">
+      <Project>{dc4fc083-91b0-4782-a64f-be81b09cb15c}</Project>
+      <Name>Quartz.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

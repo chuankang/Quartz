@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NPOI.HSSF.UserModel;
+using Quartz.Models;
 
 namespace Quartz.Web.Controllers
 {
@@ -37,27 +38,37 @@ namespace Quartz.Web.Controllers
 			return View();
 		}
 
-
+		/// <summary>
+		/// Layui获取测试数据
+		/// </summary>
 		public JsonResult GetTestData()
 		{
-			var ret = new
+			var list =new  List<TestLayui>();
+			for (int i = 1; i < 12; i++)
 			{
-				id = 1,
-				username = "张三",
-				sex = "男",
-				city = "上海",
-				sign = "我就是我，颜色不一样的烟火",
-				experience = "210",
-				score = "123",
-				classify = "",
-				wealth = "",
-				right = "",
+				var data = new TestLayui()
+				{
+					Id = i,
+					UserName = $"张三{i}",
+					Sex = "男",
+					City = "上海",
+					Sign = "我就是我，颜色不一样的烟火",
+					Experience = "210",
+					Score = "123",
+					Classify = "程序员",
+					Wealth = "100w"
 
+				};
+				list.Add(data);
+			}
+			
+			var retEntity = new ResultEntity<object>
+			{
+				code = 0,
+				data = list
 			};
-			return Json(ret,JsonRequestBehavior.AllowGet);
+			return Json(retEntity, JsonRequestBehavior.AllowGet);
 		}
-
-
 
 		/// <summary>
 		/// EXCEL上传
@@ -154,7 +165,6 @@ namespace Quartz.Web.Controllers
 
 			return View("ExcelUpload");
 		}
-
 
 		/// <summary>
 		/// EXCEL上传 选择上传
@@ -296,7 +306,6 @@ namespace Quartz.Web.Controllers
 			return View("ExcelUpload");
 		}
 
-
 		/// <summary>
 		/// 下载Excel
 		/// </summary>
@@ -311,17 +320,6 @@ namespace Quartz.Web.Controllers
 			string filename = $"名称_{downloadDateString}.xlsx";
 
 			return File(fileStream, mime, filename);
-		}
-
-		public class Product
-		{
-			public int FundId { get; set; }
-			public int PvalueId { get; set; }
-			public string IssuerName { get; set; }
-			public string Instury { get; set; }
-			public string PValue { get; set; }
-			public string IssuerRating { get; set; }
-			public string Nature { get; set; }
 		}
 
 		public static class StringUtil

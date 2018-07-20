@@ -119,3 +119,5 @@ D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Common.Logging.C
 D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Quartz.pdb
 D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Quartz.xml
 D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Dapper.xml
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Quartz.Models.dll
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Web\bin\Quartz.Models.pdb

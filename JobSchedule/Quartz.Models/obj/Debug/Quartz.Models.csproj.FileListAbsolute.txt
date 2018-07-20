@@ -1,0 +1,5 @@
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Models\bin\Debug\Quartz.Models.dll
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Models\bin\Debug\Quartz.Models.pdb
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Models\obj\Debug\Quartz.Models.csproj.CoreCompileInputs.cache
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Models\obj\Debug\Quartz.Models.dll
+D:\OwnSpace\gitQuartz20180713\Quartz\JobSchedule\Quartz.Models\obj\Debug\Quartz.Models.pdb
